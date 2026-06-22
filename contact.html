@@ -179,7 +179,7 @@
                     <i class="ph ph-envelope-simple"></i>
                     <div>
                         <h4 style="margin-bottom: 0.25rem;">Email B2B</h4>
-                        <p style="color: var(--secondary);">direction.technique@yafatel.com</p>
+                        <p style="color: var(--secondary);">contact@yafatel.com</p>
                     </div>
                 </div>
                 
@@ -200,7 +200,8 @@
             </div>
             
             <div class="contact-form-wrapper">
-                <form action="contact.php" method="POST">
+                <!-- Note : PHP non supporté sur Vercel, on utilise mailto temporairement -->
+                    <form action="mailto:contact@yafatel.com" method="POST" enctype="text/plain">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="nom">Nom & Prénom *</label>
