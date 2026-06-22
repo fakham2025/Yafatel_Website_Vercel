@@ -101,6 +101,9 @@ img {
     color: var(--white);
 }
 
+.mobile-text { display: none; }
+
+
 .btn-primary:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
@@ -470,6 +473,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .desktop-text { display: none; }
+    .mobile-text { display: inline; }
+    .nav-actions .btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
     .nav-links {
         display: none; /* In a real app, this would be a mobile menu */
     }
