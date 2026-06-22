@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingénierie Réseaux Mobiles 4G/5G | Yafatel</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Standalone Variables for Mobile Viewers */
+        :root {
+            --primary: #0A192F;
+            --accent: #0066FF;
+            --bg-alt: #F8FAFC;
+        }
+        
+        /* Brochure specific styles for PDF printing & Web viewing */
+        body { background-color: #f4f7f6; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        .brochure-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .brochure-cover {
+            position: relative;
+            height: 450px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+            overflow: hidden;
+        }
+        .vanta-fallback {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('images/brochure_mobile.png') center/cover;
+            z-index: 0;
+        }
+        .brochure-cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(transparent, rgba(10, 25, 47, 0.9));
+            z-index: 1;
+            pointer-events: none;
+        }
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            width: 100%;
+        }
+        .cover-content h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cover-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .brochure-body {
+            padding: 50px 40px;
+            color: #334155;
+        }
+        .brochure-section {
+            margin-bottom: 40px;
+        }
+        .brochure-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .brochure-container { margin: 0; border-radius: 0; }
+            .brochure-cover { height: 320px; padding: 20px; }
+            .cover-content h1 { font-size: 2rem; }
+            .brochure-body { padding: 20px; }
+        }
+        .feature-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        .feature-box h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+        .cta-box {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .cta-box h3 { color: white; margin-bottom: 15px; font-family: 'Montserrat', sans-serif;}
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        @media print {
+            .brochure-container { margin: 0; box-shadow: none; border-radius: 0; }
+            body { background: white; }
+            .cta-box { break-inside: avoid; }
+            /* Disable animation for print */
+            #vanta-cover canvas { display: none !important; }
+            .vanta-fallback { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure-container">
+        <!-- Cover -->
+        <div class="brochure-cover" id="vanta-cover">
+            <div class="vanta-fallback"></div>
+            <div class="cover-content">
+                <span class="section-subtitle" style="color: #60A5FA;">Brochure de Service</span>
+                <h1>Ingénierie Réseaux Mobiles 4G/5G</h1>
+                <p>Conception radio, upgrade de sites et conception architecturale.</p>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="brochure-body">
+            <div class="brochure-section">
+                <h2>Le Défi</h2>
+                <p>Le déploiement de la 5G et la densification des réseaux 4G nécessitent une ingénierie radio extrêmement précise. L'adaptation des pylônes existants et la validation des contraintes électromagnétiques exigent un volume d'études colossal.</p>
+            </div>
+
+            <div class="brochure-section">
+                <h2>Notre Solution & Expertise</h2>
+                <p>Notre pôle Mobile prend en charge la production documentaire et la modélisation des sites radio. Nous aidons les TowerCos et les équipementiers à accélérer le déploiement de leurs sites, du Survey à l'intégration, avec une rigueur absolue sur la sécurité et les normes.</p>
+                <div class="features-grid" style="margin-top:20px;">
+                    
+        <div class="feature-box"><h4><i class="ph ph-broadcast"></i> Conception Radio</h4><p>Ingénierie de couverture, plans de fréquences, et paramétrage 4G/5G.</p></div>
+        <div class="feature-box"><h4><i class="ph ph-compass-tool"></i> Dessin CAO & Modélisation</h4><p>Création des plans d'aménagement (APS/APD) et modélisation des pylônes.</p></div>
+        <div class="feature-box"><h4><i class="ph ph-files"></i> Dossiers Techniques (DIM)</h4><p>Constitution des dossiers d'information mairie et réglementaires.</p></div>
+        <div class="feature-box"><h4><i class="ph ph-lightning"></i> Bilans de Liaison</h4><p>Calculs FH (Faisceaux Hertziens) et ingénierie de transmission.</p></div>
+    
+                </div>
+            </div>
+
+            <div class="brochure-section">
+                <h2>Logiciels Maîtrisés</h2>
+                <p><b>AutoCAD</b> (Aménagement de sites), <b>Atoll</b> (Planification Radio), <b>Pathloss</b> (Transmission FH), Outils propriétaires opérateurs.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Prêt à externaliser votre ingénierie ?</h3>
+                <p>Contactez Yafatel pour une évaluation de vos besoins et un pilote gratuit.</p>
+                <br>
+                <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--primary);">Demander un Devis</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanta.js Animated Background Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof VANTA !== 'undefined') {
+                VANTA.NET({
+                    el: "#vanta-cover",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x0066FF,
+                    backgroundColor: 0x0A192F,
+                    points: 15.00,
+                    maxDistance: 22.00,
+                    spacing: 16.00,
+                    showDots: true
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services d'Ingénierie Réseaux Fixes & Mobiles | Yafatel</title>
+    <meta name="description" content="Découvrez nos services d'ingénierie télécom : études FTTH/FTTX, conception 4G/5G, modélisation réseau et production de livrables APS, APD, DOE.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .page-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8rem 0 5rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .service-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .service-list i {
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+        
+        .benefit-box {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-weight: 600;
+            color: var(--primary);
+        }
+    </style>
+
+    <style>
+    /* Override for Vanta Animation */
+    .page-header {
+        background: var(--primary) !important;
+        position: relative;
+        overflow: hidden;
+    }
+    .page-header > * {
+        position: relative;
+        z-index: 2;
+    }
+    .page-header::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(rgba(10, 25, 47, 0.5), rgba(10, 25, 47, 0.8));
+        z-index: 1;
+    }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span style="color: #0066FF; font-weight: 900; font-size: 1.4em;">Y</span>afatel</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="expertise.html">Notre Expertise</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header" id="vanta-hero">
+        <div class="container">
+            <span class="section-subtitle text-accent">Savoir-faire technique</span>
+            <h1>Notre Expertise en Ingénierie Télécom</h1>
+            <p>Des solutions techniques de bout en bout pour le déploiement, la modélisation et l'optimisation des infrastructures de télécommunications.</p>
+        </div>
+    </div>
+
+    <!-- Service 1 : Réseaux Fixes -->
+    <section class="section">
+        <div class="container split-section">
+            <div class="split-image">
+                <img src="images/qgis_autocad_engineer.png" alt="Production de livrables d'ingénierie et modélisation">
+            </div>
+            <div class="split-content">
+                <span class="section-subtitle">Réseaux Très Haut Débit</span>
+                <h2>Ingénierie Réseaux Fixes FTTH / FTTX</h2>
+                <p>Nous prenons en charge l'intégralité des études pour le déploiement de la fibre optique. Notre bureau d'études assure un dimensionnement précis, une modélisation optimisée des tracés et une gestion fine des bases de données de déploiement (SIG).</p>
+                
+                <div class="benefit-box">
+                    Bénéfice : Optimisation drastique des coûts de génie civil et respect absolu des règles d'ingénierie ARCEP.
+                </div>
+                
+                <h4 style="margin-top: 1.5rem; font-family: var(--font-sans);">Livrables associés :</h4>
+                <ul class="service-list">
+                    <li><i class="ph ph-check-circle"></i> Plans de piquetage et relevés terrains (BAL)</li>
+                    <li><i class="ph ph-check-circle"></i> Synoptiques réseau et d'épissurage</li>
+                    <li><i class="ph ph-check-circle"></i> Notes de calcul de charge (COMAC / CAPFT)</li>
+                    <li><i class="ph ph-check-circle"></i> Avant-Projet Détaillé (APD)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 2 : Réseaux Mobiles -->
+    <section class="section section-alt">
+        <div class="container split-section" style="direction: rtl;">
+            <div class="split-image" style="direction: ltr;">
+                <img src="images/mobile_5g_tower.png" alt="Pylône et antennes relais de télécommunications mobiles">
+            </div>
+            <div class="split-content" style="direction: ltr;">
+                <span class="section-subtitle">Réseaux Cellulaires</span>
+                <h2>Ingénierie Réseaux Mobiles 4G / 5G</h2>
+                <p>Conception et dimensionnement des sites radio. Nous accompagnons les déploiements de nouvelles technologies et les opérations de swap d'équipements avec une précision technique millimétrique.</p>
+                
+                <div class="benefit-box">
+                    Bénéfice : Qualité documentaire irréprochable et préparation optimale garantissant le succès des équipes travaux sur site (Right First Time).
+                </div>
+                
+                <h4 style="margin-top: 1.5rem; font-family: var(--font-sans);">Livrables associés :</h4>
+                <ul class="service-list">
+                    <li><i class="ph ph-check-circle"></i> Dossiers de visites techniques (VT) complets</li>
+                    <li><i class="ph ph-check-circle"></i> Plans panoramiques et intégration paysagère</li>
+                    <li><i class="ph ph-check-circle"></i> Modélisations 3D de sites macro / micro</li>
+                    <li><i class="ph ph-check-circle"></i> Dossiers APS / APD Radio et Transmission</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 3 : Externalisation -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center" style="margin: 0 auto 4rem auto;">
+                <span class="section-subtitle">BPO & Modélisation</span>
+                <h2>Externalisation de la Production Documentaire (DOE)</h2>
+            </div>
+            
+            <div class="split-section" style="grid-template-columns: 3fr 2fr;">
+                <div>
+                    <p style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 1.5rem;">Libérez vos équipes internes des tâches d'édition et de mise à jour documentaire chronophages.</p>
+                    <p>Grâce à l'automatisation d'une partie de nos processus et à l'optimisation de nos flux de travail SIG / DAO, nous traitons vos volumes d'études avec une fiabilité absolue, qu'il s'agisse de création pure ou de mises à jour de référentiels opérateurs.</p>
+                    
+                    <div style="margin-top: 2.5rem;">
+                        <a href="contact.html" class="btn btn-primary">Déléguer votre production <i class="ph ph-arrow-right" style="margin-left: 8px;"></i></a>
+                    </div>
+                </div>
+                
+                <div style="background: var(--primary); color: white; padding: 2.5rem; border-radius: 8px;">
+                    <h3 style="color: white; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem; margin-bottom: 1.5rem;">Nos Outils Maîtrisés</h3>
+                    <ul class="service-list" style="color: rgba(255,255,255,0.8);">
+                        <li><i class="ph ph-caret-right" style="color: var(--accent);"></i> AutoCAD / MicroStation</li>
+                        <li><i class="ph ph-caret-right" style="color: var(--accent);"></i> QGIS / ArcGIS (SIG)</li>
+                        <li><i class="ph ph-caret-right" style="color: var(--accent);"></i> CapFT / Comac</li>
+                        <li><i class="ph ph-caret-right" style="color: var(--accent);"></i> Netgeo / GraceTHD</li>
+                        <li><i class="ph ph-caret-right" style="color: var(--accent);"></i> Outils opérateurs (Optimum, IPON...)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à optimiser vos coûts de production et accélérer vos livraisons ?</h2>
+            <p>Discutons de vos volumes de production et de vos contraintes techniques.</p>
+            <a href="contact.html" class="btn btn-outline" style="background-color: var(--white); color: var(--primary);">Demander un devis B2B</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yafatel. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <!-- Vanta.js Animated Background Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+</body>
+</html>

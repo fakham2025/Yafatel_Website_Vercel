@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.telco-ingenierie.fr/sitemap.xml
