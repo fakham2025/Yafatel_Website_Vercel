@@ -473,14 +473,27 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
     .desktop-text { display: none; }
     .mobile-text { display: inline; }
-    .nav-actions .btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+    .nav-actions {
+        order: 1;
+    }
+    .nav-actions .btn { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0 !important;
+    }
     .nav-links {
         display: none; /* In a real app, this would be a mobile menu */
     }
     .menu-toggle {
         display: block;
+        order: -1;
     }
     .hero {
         padding: 6rem 0 8rem;
