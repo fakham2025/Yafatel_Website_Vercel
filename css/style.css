@@ -1116,3 +1116,31 @@ input, textarea, select {
         transform: translateY(0);
     }
 }
+
+
+/* --- SPLIT SECTION ORDERING (MOBILE FIX) --- */
+@media (min-width: 993px) {
+    .split-section.reverse .split-content {
+        order: 1;
+    }
+    .split-section.reverse .split-image {
+        order: 2;
+    }
+}
+
+@media (max-width: 992px) {
+    .split-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .split-image {
+        order: -1 !important; /* Forces image on top */
+        width: 100%;
+    }
+    .split-content {
+        order: 1 !important;
+        width: 100%;
+        text-align: left; /* Reset any legacy alignments */
+    }
+}
