@@ -5,18 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.backgroundColor = 'var(--primary)';
-                navLinks.style.padding = '1rem 0';
-                navLinks.style.boxShadow = 'var(--shadow-md)';
+            navLinks.classList.toggle('nav-active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                if (navLinks.classList.contains('nav-active')) {
+                    icon.classList.remove('ph-list');
+                    icon.classList.add('ph-x');
+                } else {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                }
             }
         });
     }
