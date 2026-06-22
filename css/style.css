@@ -1144,3 +1144,18 @@ input, textarea, select {
         text-align: left; /* Reset any legacy alignments */
     }
 }
+
+
+/* --- EXPERTISE GRID --- */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+}
