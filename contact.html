@@ -200,8 +200,9 @@
             </div>
             
             <div class="contact-form-wrapper">
-                <!-- Note : PHP non supporté sur Vercel, on utilise mailto temporairement -->
-                    <form action="mailto:contact@yafatel.com" method="POST" enctype="text/plain">
+                <!-- Utilisation de FormSubmit pour la gestion des emails sans backend -->
+                    <form action="https://formsubmit.co/contact@yafatel.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau Lead Yafatel !">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="nom">Nom & Prénom *</label>
