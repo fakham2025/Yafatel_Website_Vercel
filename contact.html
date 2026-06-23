@@ -201,7 +201,12 @@
             
             <div class="contact-form-wrapper">
                 <!-- Utilisation de FormSubmit pour la gestion des emails sans backend -->
+                    
                     <form action="https://formsubmit.co/contact@yafatel.com" method="POST">
+                        <input type="hidden" name="_next" value="https://yafatel.com/merci.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+
                         <input type="hidden" name="_subject" value="Nouveau Lead Yafatel !">
                     <div class="form-row">
                         <div class="form-group">
