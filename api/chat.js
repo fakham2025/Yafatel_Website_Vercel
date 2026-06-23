@@ -26,13 +26,16 @@ Tes consignes strictes (Règles de réponse) :
         return res.status(400).json({ error: 'Le message est vide.' });
     }
 
+    // Combine system prompt and user message to avoid unsupported API features
+    const combinedMessage = `${systemPrompt}
+
+Question de l'utilisateur : ${userMessage}
+
+Ta réponse (en appliquant les règles strictement) :`;
+
     const postData = {
-        systemInstruction: {
-            parts: [{ text: systemPrompt }]
-        },
         contents: [{
-            role: "user",
-            parts: [{ text: userMessage }]
+            parts: [{ text: combinedMessage }]
         }],
         generationConfig: {
             temperature: 0.2,
@@ -41,7 +44,8 @@ Tes consignes strictes (Règles de réponse) :
     };
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+        // Using gemini-1.5-flash as the standard stable model
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +60,6 @@ Tes consignes strictes (Règles de réponse) :
             return res.status(200).json({ reply: botReply });
         } else {
             console.error('Gemini API Error:', data);
-            // Retourne l'erreur exacte pour qu'on puisse la débugger dans le chat
             const errorMsg = data.error ? data.error.message : JSON.stringify(data);
             return res.status(200).json({ reply: `[Erreur API] ${errorMsg}` });
         }
