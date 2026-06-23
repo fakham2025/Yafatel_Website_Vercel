@@ -4,21 +4,22 @@ export default async function handler(req, res) {
     }
 
     // Récupération de la clé API depuis les variables d'environnement de Vercel
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
 
-    if (!apiKey || apiKey === "VOTRE_CLE_API_OPENAI_ICI" || apiKey === "") {
+    if (!apiKey || apiKey === "VOTRE_CLE_API_GEMINI_ICI" || apiKey === "") {
         return res.status(200).json({ 
-            reply: "[Mode Démo] Bonjour ! Pour activer l'intelligence artificielle sur Vercel, veuillez ajouter votre clé API OpenAI dans les 'Environment Variables' (nom: OPENAI_API_KEY) de votre projet Vercel. En attendant, n'hésitez pas à visiter notre page <a href='contact.html' style='color:#0066FF; font-weight:bold;'>Contact</a>." 
+            reply: "[Mode Démo] Bonjour ! Pour activer le Chatbot IA, veuillez créer une clé API gratuite sur Google AI Studio et l'ajouter dans Vercel sous le nom 'GEMINI_API_KEY'. En attendant, n'hésitez pas à visiter notre page <a href='contact.html' style='color:#0066FF; font-weight:bold;'>Contact</a>." 
         });
     }
 
-    const systemPrompt = `Tu es l'assistant virtuel officiel de 'Yafatel', un bureau d'études télécom basé à Tanger (Maroc). Tu t'adresses principalement à des clients professionnels B2B européens (français, belges, suisses). Ton ton doit être professionnel, courtois, expert et rassurant.
-L'entreprise est spécialisée dans l'externalisation de la production d'études télécoms (FTTH, FTTX, ingénierie mobile 4G/5G) et la production de livrables sur des logiciels comme AutoCAD, QGIS, GraceTHD, Netgeo, etc. Notre atout est d'offrir des livrables de haute qualité (taux de rejet quasi nul) et une réduction des coûts (jusqu'à 30%) par rapport aux bureaux d'études européens, grâce à notre équipe d'ingénieurs au Maroc.
+    const systemPrompt = `Tu es l'assistant virtuel officiel de 'Yafatel', un bureau d'études télécom basé à Tanger (Maroc). Tu t'adresses principalement à des clients professionnels B2B européens (français, belges, suisses). Ton ton doit être professionnel, courtois et expert.
+L'entreprise est spécialisée dans l'externalisation de la production d'études télécoms (FTTH, FTTX, ingénierie mobile 4G/5G) et la production de livrables sur des logiciels comme AutoCAD, QGIS, GraceTHD, Netgeo, etc.
 Tes consignes strictes (Règles de réponse) :
-1. Sois concis : Fais des réponses courtes (2 à 3 phrases maximum) pour faciliter la lecture dans une petite fenêtre de chat.
-2. Pas de tarification : Ne donne jamais de prix, de tarifs ou de délais précis. Si on te demande un prix, explique que chaque projet est sur mesure.
-3. Reste dans le sujet : Réponds uniquement aux questions liées aux télécoms, aux bureaux d'études, ou à l'externalisation. Si la question est hors sujet, excuse-toi poliment et recadre sur les services de Yafatel.
-4. Objectif Final (Conversion) : Ton but principal n'est pas de tout résoudre, mais de qualifier le prospect. À la fin de chaque conversation pertinente, tu dois obligatoirement rediriger l'utilisateur vers la page Contact (lien: contact.html) ou lui demander de laisser son email pour qu'un expert technique le rappelle.`;
+1. Sois concis : Fais des réponses courtes (2 à 3 phrases maximum).
+2. Pas de tarification : Ne donne jamais de prix, de tarifs ou de délais précis.
+3. Reste dans le sujet : Réponds uniquement aux questions liées aux télécoms, aux bureaux d'études, ou à l'externalisation.
+4. Règle Hors-Sujet OBLIGATOIRE : Si le client te pose une question totalement hors sujet (recette de cuisine, politique, devinette, ou demande d'emploi non pertinente), tu DOIS ignorer la question et répondre EXACTEMENT avec cette phrase : "Notre équipe prend contact avec vous dans un instant."
+5. Objectif Final : Pour les vraies demandes, redirige l'utilisateur vers la page Contact (lien: contact.html).`;
 
     const userMessage = req.body.message || '';
 
@@ -27,33 +28,35 @@ Tes consignes strictes (Règles de réponse) :
     }
 
     const postData = {
-        model: "gpt-4o-mini",
-        messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: userMessage }
-        ],
-        temperature: 0.7,
-        max_tokens: 150
+        system_instruction: {
+            parts: [{ text: systemPrompt }]
+        },
+        contents: [{
+            parts: [{ text: userMessage }]
+        }],
+        generationConfig: {
+            temperature: 0.2,
+            maxOutputTokens: 150
+        }
     };
 
     try {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(postData)
         });
 
         const data = await response.json();
 
-        if (response.ok) {
-            const botReply = data.choices[0].message.content;
+        if (response.ok && data.candidates && data.candidates.length > 0) {
+            const botReply = data.candidates[0].content.parts[0].text;
             return res.status(200).json({ reply: botReply });
         } else {
-            console.error('OpenAI API Error:', data);
-            return res.status(500).json({ reply: "Désolé, je rencontre un problème technique avec l'IA. Veuillez utiliser la page Contact." });
+            console.error('Gemini API Error:', data);
+            return res.status(500).json({ reply: "Désolé, je rencontre un problème technique. Veuillez utiliser la page Contact." });
         }
     } catch (error) {
         console.error('Fetch Error:', error);
