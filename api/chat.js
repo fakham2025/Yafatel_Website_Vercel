@@ -3,12 +3,11 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 
-    // Récupération de la clé API depuis les variables d'environnement de Vercel
     const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey || apiKey === "VOTRE_CLE_API_GEMINI_ICI" || apiKey === "") {
         return res.status(200).json({ 
-            reply: "[Mode Démo] Bonjour ! Pour activer le Chatbot IA, veuillez créer une clé API gratuite sur Google AI Studio et l'ajouter dans Vercel sous le nom 'GEMINI_API_KEY'. En attendant, n'hésitez pas à visiter notre page <a href='contact.html' style='color:#0066FF; font-weight:bold;'>Contact</a>." 
+            reply: "[Mode Démo] Clé API introuvable dans Vercel." 
         });
     }
 
@@ -28,10 +27,11 @@ Tes consignes strictes (Règles de réponse) :
     }
 
     const postData = {
-        system_instruction: {
+        systemInstruction: {
             parts: [{ text: systemPrompt }]
         },
         contents: [{
+            role: "user",
             parts: [{ text: userMessage }]
         }],
         generationConfig: {
@@ -56,7 +56,9 @@ Tes consignes strictes (Règles de réponse) :
             return res.status(200).json({ reply: botReply });
         } else {
             console.error('Gemini API Error:', data);
-            return res.status(500).json({ reply: "Désolé, je rencontre un problème technique. Veuillez utiliser la page Contact." });
+            // Retourne l'erreur exacte pour qu'on puisse la débugger dans le chat
+            const errorMsg = data.error ? data.error.message : JSON.stringify(data);
+            return res.status(200).json({ reply: `[Erreur API] ${errorMsg}` });
         }
     } catch (error) {
         console.error('Fetch Error:', error);
