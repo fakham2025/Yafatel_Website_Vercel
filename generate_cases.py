@@ -1,0 +1,129 @@
+import os
+
+directory = r"C:\Users\HP\Desktop\Top skills busnesse\Site Web Vitrine wordpresse\Yafatel_Website_Vercel"
+filepath = os.path.join(directory, "case-studies.html")
+
+content = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Études de Cas Télécom (ROI) | Yafatel</title>
+    <meta name="description" content="Découvrez nos études de cas. Comment Yafatel a réduit les coûts d'ingénierie et évité des pénalités opérateurs grâce à l'externalisation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span style="color: #0066FF; font-weight: 900; font-size: 1.4em;">Y</span>afatel</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="expertise.html">Notre Expertise</a></li>
+                    <li><a href="projets.html" class="active">Projets</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary"><span class="desktop-text">Demander un devis</span><span class="mobile-text">Devis</span></a>
+            </div>
+            <div class="menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding-top: 150px; padding-bottom: 80px; text-align: center;">
+        <div class="container">
+            <span class="section-subtitle text-accent">Hub de Preuve Sociale B2B</span>
+            <h1 style="max-width: 900px; margin: 0 auto 1.5rem auto;">Études de Cas & Delta Économique</h1>
+            <p style="max-width: 700px; margin: 0 auto 2rem auto;">Analyse transparente de nos interventions : défis chiffrés, exécution et réduction du risque pour nos partenaires intégrateurs et opérateurs.</p>
+        </div>
+    </section>
+    
+    <!-- Case Studies List -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Case Study 1 -->
+            <div class="case-study-card" style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0066FF; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                    <h2>Sauvetage de Déploiement FTTH (Région Grand Est)</h2>
+                    <span style="background: #e6f0ff; color: #0066FF; padding: 5px 15px; border-radius: 20px; font-weight: 600;">Client: Intégrateur BTP de Rang 1</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h4 style="color: #ff3333;"><i class="ph-bold ph-warning-circle"></i> Le Problème (Avant)</h4>
+                        <p>Goulot d'étranglement sévère. <strong>450 études FTTH en souffrance</strong>. Incapacité à recruter 5 dessinateurs-projeteurs en France en moins de 3 mois. Retard accumulé de 6 semaines menaçant la livraison globale.</p>
+                        
+                        <h4 style="color: #ff8c00; margin-top: 1.5rem;"><i class="ph-bold ph-shield-warning"></i> Risque Client</h4>
+                        <p>Pénalités de retard imposées par l'Opérateur d'Infrastructure (OI) estimées à <strong>45 000 € minimum</strong> si le lot n'était pas rendu au format GraceTHD sous 30 jours.</p>
+                    </div>
+                    
+                    <div style="background: #f9fbfd; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #0066FF;"><i class="ph-bold ph-gear"></i> Solution Yafatel</h4>
+                        <p>Déploiement en 5 jours ouvrés d'une "Task Force" offshore (Maroc) de 4 ingénieurs et 1 QA technique. Intégration directe au VPN et aux outils QGIS/Netgeo du client.</p>
+                        
+                        <h4 style="color: #00b300; margin-top: 1.5rem;"><i class="ph-bold ph-trend-up"></i> Résultat (Après)</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>450 études livrées</strong> en 3.5 semaines.</li>
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>Taux de reprise :</strong> 2.1% (Inférieur à la moyenne nationale).</li>
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>Pénalité évitée :</strong> 45 000 €.</li>
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>Delta Économique :</strong> Gain de 22% sur le budget production initial.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="case-study-card" style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0066FF; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                    <h2>Externalisation Continue (Réseau Mobile 4G/5G)</h2>
+                    <span style="background: #e6f0ff; color: #0066FF; padding: 5px 15px; border-radius: 20px; font-weight: 600;">Client: Bureau d'Étude Spécialisé Radio</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h4 style="color: #ff3333;"><i class="ph-bold ph-warning-circle"></i> Le Problème (Avant)</h4>
+                        <p>Marge nette en chute libre due aux coûts salariaux français pour la production documentaire (APD pylônes et calculs d'impact). <strong>Turn-over important</strong> des dessinateurs qui désorganisait la chaîne de production.</p>
+                        
+                        <h4 style="color: #ff8c00; margin-top: 1.5rem;"><i class="ph-bold ph-shield-warning"></i> Risque Client</h4>
+                        <p>Incapacité de répondre aux appels d'offres massifs de renouvellement 5G à cause d'un manque de capacité de production documentaire compétitive.</p>
+                    </div>
+                    
+                    <div style="background: #f9fbfd; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #0066FF;"><i class="ph-bold ph-gear"></i> Solution Yafatel</h4>
+                        <p>Création d'un "Nearshore Center" permanent. Un ingénieur dédié 100% au client à Tanger, opérant sous les processus qualités stricts du client (AutoCAD, relevés radio).</p>
+                        
+                        <h4 style="color: #00b300; margin-top: 1.5rem;"><i class="ph-bold ph-trend-up"></i> Résultat (Après)</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>Élimination du risque RH :</strong> Yafatel gère le turn-over et le sourcing.</li>
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>Scalabilité :</strong> Passage de 1 à 3 ingénieurs dédiés en 48h lors des pics.</li>
+                            <li><i class="ph-bold ph-check" style="color: #00b300;"></i> <strong>Delta Économique (€) :</strong> Baisse des coûts fixes de production de <strong>34%</strong>, permettant de remporter de nouveaux marchés publics.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer (Standard) -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+"""
+
+with open(filepath, 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Case studies file generated successfully.")

@@ -24,6 +24,49 @@
     <meta property="og:url" content="https://yafatel.com/">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://yafatel.com/#organization",
+          "name": "Yafatel",
+          "url": "https://yafatel.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://yafatel.com/favicon.png"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212-6-00-00-00-00",
+            "contactType": "customer support",
+            "areaServed": "FR",
+            "availableLanguage": "French"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://yafatel.com/#localbusiness",
+          "name": "Yafatel Ingénierie Télécom Offshore",
+          "image": "https://yafatel.com/images/brochure_ftth.png",
+          "priceRange": "$$$",
+          "telephone": "+212-6-00-00-00-00",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Tanger",
+            "addressLocality": "Tanger",
+            "addressCountry": "MA"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "France"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -58,8 +101,8 @@
             <h1>Externalisation de la Production d'Ingénierie Télécom</h1>
             <p>Accélérez la remise de vos livrables techniques et réduisez vos coûts de production grâce Ã  une extension dédiée de votre bureau d'études. Spécialistes des réseaux fixes (FTTH/FTTX) et mobiles (4G/5G).</p>
             <div class="hero-btns">
-                <a href="contact.html" class="btn btn-primary">Demander une étude de faisabilité</a>
-                <a href="#services" class="btn btn-outline">Découvrir notre expertise</a>
+                <a href="contact.html" class="btn btn-primary">Demander un Audit Technique Gratuit</a>
+                <a href="case-studies.html" class="btn btn-outline">Voir l'Impact ROI (Études de Cas)</a>
             </div>
         </div>
     </section>
@@ -136,31 +179,32 @@
         </div>
     </section>
 
-    <!-- Process Timeline -->
+    <!-- Gestion du Risque B2B (Objections) -->
     <section class="section">
         <div class="container">
             <div class="section-header text-center" style="margin: 0 auto 4rem auto;">
-                <span class="section-subtitle">Excellence Opérationnelle</span>
-                <h2>Une méthodologie de production optimisée</h2>
+                <span class="section-subtitle">Sécurité & Conformité</span>
+                <h2>Votre Partenaire de Confiance, Sans Risque Juridique</h2>
+                <p style="max-width: 800px; margin: 1rem auto 0; color: #555;">Nous comprenons les exigences des donneurs d'ordres français. Notre structure au Maroc est conçue pour répondre aux plus hauts standards de conformité et de sécurité des données.</p>
             </div>
             
             <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Cadrage & Transfert</h3>
-                    <p>Analyse de vos cahiers des charges et alignement rigoureux sur vos standards de production avant le démarrage des études.</p>
+                <div class="process-step" style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 12px; text-align: left;">
+                    <i class="ph-bold ph-shield-check" style="font-size: 2.5rem; color: #00b300; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.2rem;">Conformité RGPD & Sécurité</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.5;">Toutes nos infrastructures IT sont sécurisées. Les données de vos projets et les plans (Netgeo/AutoCAD) ne quittent jamais votre environnement grâce à l'utilisation de VPN sécurisés.</p>
                 </div>
                 
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Production Automatisée</h3>
-                    <p>Réalisation des études avec intégration d'outils intelligents de production pour accélérer les traitements de données.</p>
+                <div class="process-step" style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 12px; text-align: left;">
+                    <i class="ph-bold ph-file-text" style="font-size: 2.5rem; color: #0066FF; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.2rem;">Contrat de Droit Français</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.5;">La contractualisation et la facturation se font avec la plus grande transparence. Pas de surprise légale, vous êtes protégé par des accords stricts de non-divulgation (NDA).</p>
                 </div>
                 
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Contrôle Qualité (QA)</h3>
-                    <p>Double vérification interne et validation technique par un lead développeur avant la remise des livrables définitifs.</p>
+                <div class="process-step" style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 12px; text-align: left;">
+                    <i class="ph-bold ph-arrows-merge" style="font-size: 2.5rem; color: #ff8c00; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.2rem;">Plan de Continuité (PCA)</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.5;">Le "Plan B" parfait. En cas de pic de charge de votre équipe française ou départ imprévu, Yafatel agit comme un buffer scalable pour absorber votre surcharge en 48h.</p>
                 </div>
             </div>
         </div>
